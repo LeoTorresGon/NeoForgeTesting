@@ -1,0 +1,10 @@
+{
+  "tot_musica": {
+    "sounds": [
+      {
+        "name": "neoforgetestmod:tot_musica",
+        "stream": true
+      }
+    ]
+  }
+}

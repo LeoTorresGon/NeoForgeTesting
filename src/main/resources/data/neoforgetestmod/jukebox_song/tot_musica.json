@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.neoforgetestmod.tot_musica_music_disc.desc"
+  },
+  "length_in_seconds": 195.0,
+  "sound_event": "neoforgetestmod:tot_musica"
+}

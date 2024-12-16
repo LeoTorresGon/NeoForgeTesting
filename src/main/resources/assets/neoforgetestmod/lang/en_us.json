@@ -1,0 +1,51 @@
+{
+  "item.neoforgetestmod.bismuth": "Bismuth",
+  "item.neoforgetestmod.raw_bismuth": "Raw Bismuth",
+  "item.neoforgetestmod.blue_zircon": "Blue Zircon",
+  "item.neoforgetestmod.crystal_blade": "Crystal Blade",
+
+  "item.neoforgetestmod.chisel": "Chisel",
+  "item.neoforgetestmod.windspire": "Windspire",
+  "item.neoforgetestmod.boga": "Boga",
+  "item.neoforgetestmod.dice": "Dice",
+  "item.neoforgetestmod.shoot_sword": "Espada foda",
+  "item.neoforgetestmod.crystal_dagger": "Crystal Dagger",
+  "item.neoforgetestmod.witherthorn": "Witherthorn",
+  "item.neoforgetestmod.soulbound_crossbow": "Soulbound Crossbow",
+  "item.neoforgetestmod.warp": "Warp",
+  "item.neoforgetestmod.kitsune_mask_purple": "Purple Kitsune Mask",
+
+  "item.neoforgetestmod.tot_musica_music_disc": "Tot Musica Music Disc",
+  "item.neoforgetestmod.tot_musica_music_disc.desc": "ADO - Tot Musica",
+
+  "block.neoforgetestmod.bismuth_ore": "Bismuth Ore",
+  "block.neoforgetestmod.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
+  "block.neoforgetestmod.bismuth_block": "Block of Bismuth",
+  "block.neoforgetestmod.blue_zircon_ore": "Zircon Ore",
+  "block.neoforgetestmod.blue_zircon_gravel_ore": "Gravel Zircon Ore",
+  "block.neoforgetestmod.blue_zircon_sand_ore": "Sand Zircon Ore",
+
+  "block.neoforgetestmod.soulwood_log": "Soulwood Log",
+  "block.neoforgetestmod.stripped_soulwood_log": "Stripped Soulwood Log",
+  "block.neoforgetestmod.soulwood_wood": "Soulwood Wood",
+  "block.neoforgetestmod.stripped_soulwood_wood": "Stripped Soulwood Wood",
+  "block.neoforgetestmod.soulwood_planks": "Soulwood Planks",
+  "block.neoforgetestmod.soul_leaves": "Soul Leaves",
+  "block.neoforgetestmod.soul_fungus": "Soul Fungus",
+
+  "block.neoforgetestmod.soul_tuner": "Soul Tuner",
+
+  "creativetab.neoforgetestmod.bismuth_items": "Bismuth Items",
+  "creativetab.neoforgetestmod.bismuth_blocks": "Bismuth Blocks",
+
+  "effect.neoforgetestmod.numbness": "Numbness",
+  "effect.neoforgetestmod.soul_tear": "Soul Tear",
+
+  "death.attack.neoforgetestmod.numbness": "couldn't bear the pain.",
+
+  "enchantment.neoforgetestmod.lightning_striker": "Lightning Striker",
+  "enchantment.neoforgetestmod.pull_strike": "Pull Strike",
+  "enchantment.neoforgetestmod.withering": "Withering",
+
+  "key.neoforgetestmod.dash": "Dash"
+}

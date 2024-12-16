@@ -1,5 +1,29 @@
 package net.leotorresgon.neoforgetestmod;
 
+import net.leotorresgon.neoforgetestmod.attachment.ModAttachments;
+import net.leotorresgon.neoforgetestmod.block.ModBlocks;
+import net.leotorresgon.neoforgetestmod.block.entity.ModBlockEntities;
+import net.leotorresgon.neoforgetestmod.effect.ModEffects;
+import net.leotorresgon.neoforgetestmod.enchantment.ModEnchantmentEffects;
+import net.leotorresgon.neoforgetestmod.entity.ModEntities;
+import net.leotorresgon.neoforgetestmod.entity.client.custom.SlashEntityRenderer;
+import net.leotorresgon.neoforgetestmod.item.ModArmorMaterials;
+import net.leotorresgon.neoforgetestmod.item.ModCreativeModeTabs;
+import net.leotorresgon.neoforgetestmod.item.ModItems;
+import net.leotorresgon.neoforgetestmod.particle.ModParticles;
+import net.leotorresgon.neoforgetestmod.particle.custom.BloodParticles;
+import net.leotorresgon.neoforgetestmod.particle.custom.BloodParticlesStatic;
+import net.leotorresgon.neoforgetestmod.screen.ModMenuTypes;
+import net.leotorresgon.neoforgetestmod.screen.SoulTunerScreen;
+import net.leotorresgon.neoforgetestmod.sound.ModSounds;
+import net.leotorresgon.neoforgetestmod.util.ModItemProperties;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -36,6 +60,26 @@ public class NeoForgeTestMod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
+        ModSounds.register(modEventBus);
+
+        ModEnchantmentEffects.register(modEventBus);
+        ModEntities.register(modEventBus);
+
+        ModParticles.register(modEventBus);
+
+        ModEffects.register(modEventBus);
+        ModAttachments.ATTACHMENT_TYPES.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
+        ModArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -43,13 +87,24 @@ public class NeoForgeTestMod {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
+
     }
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.BISMUTH);
+            event.accept(ModItems.RAW_BISMUTH);
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.BISMUTH_BLOCK);
+            event.accept(ModBlocks.BISMUTH_ORE);
+        }
+    }
 
+    public static ResourceLocation rl(String path) {
+        return ResourceLocation.fromNamespaceAndPath(NeoForgeTestMod.MOD_ID, path);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -63,7 +118,13 @@ public class NeoForgeTestMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ModItemProperties.addCustomItemProperties();
+            EntityRenderers.register(ModEntities.DICE_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModEntities.LIFESTEAL_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModEntities.SLASH_PROJECTILE.get(), SlashEntityRenderer::new);
+            EntityRenderers.register(ModEntities.WARP_TRIDENT.get(), ThrownTridentRenderer::new);
         }
+
+
     }
 }

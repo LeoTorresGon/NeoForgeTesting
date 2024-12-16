@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "neoforgetestmod:item/windspire_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "neoforgetestmod:item/windspire_2d"
+    },
+    "ground": {
+      "parent": "neoforgetestmod:item/windspire_2d"
+    },
+    "fixed": {
+      "parent": "neoforgetestmod:item/windspire_2d"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "neoforgetestmod:item/soulbound_crossbow",
+  "textures": {
+    "layer0": "neoforgetestmod:item/soulbound_crossbow_pulling_2"
+  }
+}
