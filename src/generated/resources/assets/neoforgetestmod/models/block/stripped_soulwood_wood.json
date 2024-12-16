@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "neoforgetestmod:block/stripped_soulwood_log",
+    "side": "neoforgetestmod:block/stripped_soulwood_log"
+  }
+}

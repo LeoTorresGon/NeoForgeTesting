@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "neoforgetestmod:item/tot_musica_music_disc"
+  }
+}

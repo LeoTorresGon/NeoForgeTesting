@@ -1,0 +1,6 @@
+// 1.21.1	2024-12-05T23:08:54.9722666	Tags for minecraft:block mod id neoforgetestmod
+ffd4130cc147ae348bf4da95c34debf7b42c4483 data/minecraft/tags/block/logs.json
+a730803b9ed1858759b742cfda7ff5f1e6255c97 data/minecraft/tags/block/mineable/pickaxe.json
+5edb891dc1541c28a5daf3aac5c535427d0b64b1 data/minecraft/tags/block/mineable/shovel.json
+f42a45bc047e7d19911c0c3a21275767548aa7d1 data/minecraft/tags/block/needs_diamond_tool.json
+3478bb44d40333f3d9dc8374a450a5766f43dab4 data/minecraft/tags/block/needs_iron_tool.json

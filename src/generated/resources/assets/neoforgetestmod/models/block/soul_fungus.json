@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "neoforgetestmod:block/soul_fungus"
+  },
+  "config": {
+    "valid_base_block": {
+      "Name": "minecraft:block/soul_soil"
+    }
+  }
+}

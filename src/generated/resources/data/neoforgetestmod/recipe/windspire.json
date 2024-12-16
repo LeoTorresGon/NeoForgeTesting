@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "neoforgetestmod:blue_zircon"
+    },
+    "B": {
+      "item": "minecraft:breeze_rod"
+    },
+    "C": {
+      "item": "minecraft:trident"
+    }
+  },
+  "pattern": [
+    " AA",
+    " CA",
+    "B  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "neoforgetestmod:windspire"
+  }
+}
