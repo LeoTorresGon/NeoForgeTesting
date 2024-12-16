@@ -28,24 +28,24 @@ public class KitsuneMaskModel extends JavaModel {
 
 	private static final ModelPartData BASE = new ModelPartData("base", CubeListBuilder.create()
 			.texOffs(7, 7)
-			.addBox(-4.0F, -9.0F, -5.0F, 8.0F, 6.0F, 1.0F, new CubeDeformation(0.0f)));
+			.addBox(-4.0F, -8.0F, -5.0F, 8.0F, 6.0F, 1.0F, new CubeDeformation(0.0f)));
 	private static final ModelPartData LEFT_EAR = new ModelPartData("left_ear", CubeListBuilder.create()
 			.texOffs(0, 4).mirror()
-			.addBox(2.0F, -12.0F, -5.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false)
+			.addBox(2.0F, -11.0F, -5.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false)
 			.texOffs(1, 1)
-			.addBox(-4.0F, -11.0F, -5.0F, 3.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)));
+			.addBox(-4.0F, -10.0F, -5.0F, 3.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)));
 
 	private static final ModelPartData RIGHT_EAR = new ModelPartData("right_ear", CubeListBuilder.create()
 			.texOffs(1, 1).mirror()
-			.addBox(1.0F, -11.0F, -5.0F, 3.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false)
+			.addBox(1.0F, -10.0F, -5.0F, 3.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false)
 			.texOffs(6, 4)
-			.addBox(-4.0F, -12.0F, -5.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)));
+			.addBox(-4.0F, -11.0F, -5.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)));
 
 	private static final ModelPartData NOSE = new ModelPartData("nose", CubeListBuilder.create()
 			.texOffs(0, 6)
-			.addBox(-3.0F, -4.0F, -5.0F, 6.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+			.addBox(-3.0F, -3.0F, -5.0F, 6.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 			.texOffs(9, 1)
-			.addBox(-2.0F, -5.0F, -6.0F, 4.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)),
+			.addBox(-2.0F, -4.0F, -6.0F, 4.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)),
 			PartPose.offset(0.0F, 1.0F, 0.0F));
 
 	private final List<ModelPart> parts;

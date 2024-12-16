@@ -15,6 +15,8 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -22,6 +24,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.RenderNameTagEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
@@ -129,6 +132,16 @@ public class ModEvents {
     public static void onSweepAttackEvent(SweepAttackEvent event){
         if (event.getEntity().getItemInHand(InteractionHand.MAIN_HAND).is(ModItems.WITHERTHORN.get())){
             event.setSweeping(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void renderNameTag(RenderNameTagEvent event){
+        Entity entity = event.getEntity();
+        if (entity instanceof Player player){
+            if (player.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.KITSUNE_MASK)){
+                event.setContent(player.getItemBySlot(EquipmentSlot.HEAD).getDisplayName());
+            }
         }
     }
 
