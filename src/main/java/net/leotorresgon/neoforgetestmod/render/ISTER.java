@@ -52,45 +52,4 @@ public abstract class ISTER extends BlockEntityWithoutLevelRenderer {
     public abstract void renderByItem(@NotNull ItemStack stack, @NotNull ItemDisplayContext displayContext, @NotNull PoseStack matrix, @NotNull MultiBufferSource renderer,
                                       int light, int overlayLight);
 
-    /**
-     * @implNote Heavily based on/from vanilla's ItemRenderer#render code that calls the renderByItem method on the ISBER
-     */
-    protected void renderBlockItem(@NotNull ItemStack stack, @NotNull ItemDisplayContext displayContext, @NotNull PoseStack matrix, @NotNull MultiBufferSource renderer,
-                                   int light, int overlayLight, ModelData modelData) {
-        if (!(stack.getItem() instanceof BlockItem blockItem)) {
-            return;
-        }
-        Block block = blockItem.getBlock();
-        boolean fabulous;
-        if (displayContext != ItemDisplayContext.GUI && !displayContext.firstPerson()) {
-            fabulous = !(block instanceof HalfTransparentBlock) && !(block instanceof StainedGlassPaneBlock);
-        } else {
-            fabulous = true;
-        }
-        Minecraft minecraft = Minecraft.getInstance();
-        ItemRenderer itemRenderer = minecraft.getItemRenderer();
-        BlockState defaultState = block.defaultBlockState();
-        //TODO: See if we can come up with a better way to handle getting the model, maybe even one that supports non block items??
-        BakedModel baseModel = minecraft.getModelManager().getBlockModelShaper().getBlockModel(defaultState);
-        long seed = 42;
-        RandomSource random = RandomSource.create();
-        boolean hasEffect = stack.hasFoil();
-        for (BakedModel model : baseModel.getRenderPasses(stack, fabulous)) {
-            for (RenderType renderType : model.getRenderTypes(stack, fabulous)) {
-                VertexConsumer buffer;
-                if (fabulous) {
-                    buffer = ItemRenderer.getFoilBufferDirect(renderer, renderType, true, hasEffect);
-                } else {
-                    buffer = ItemRenderer.getFoilBuffer(renderer, renderType, true, hasEffect);
-                }
-                //Note: Manually call the render quads lists rather than using renderModelLists so that we can pass the proper render type and model data
-                for (Direction direction : Direction.values()) {
-                    random.setSeed(seed);
-                    itemRenderer.renderQuadList(matrix, buffer, model.getQuads(defaultState, direction, random, modelData, renderType), stack, light, overlayLight);
-                }
-                random.setSeed(seed);
-                itemRenderer.renderQuadList(matrix, buffer, model.getQuads(defaultState, null, random, modelData, renderType), stack, light, overlayLight);
-            }
-        }
-    }
 }

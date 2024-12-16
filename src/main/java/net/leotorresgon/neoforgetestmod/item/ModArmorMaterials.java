@@ -34,6 +34,7 @@ public class ModArmorMaterials {
     public static final MekanismDeferredHolder<ArmorMaterial, ArmorMaterial> KITSUNE_MASKS = registerBaseSpecial("kitsune_mask");
 
 
+
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
                                                   int enchantability, float toughness, float knockbackResistance,
                                                   Supplier<Item> ingredientItem, Holder<SoundEvent> equipSound) {

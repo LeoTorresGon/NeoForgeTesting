@@ -20,13 +20,23 @@ public class KitsuneMaskArmor implements ICustomArmor, ResourceManagerReloadList
     private KitsuneMaskArmor(){
     }
 
+    @Override
+    public void onResourceManagerReload(ResourceManager resourceManager) {
+        model = new KitsuneMaskModel(Minecraft.getInstance().getEntityModels());
+    }
 
     @Override
     public void render(HumanoidModel<? extends LivingEntity> baseModel, @NotNull PoseStack matrix, @NotNull MultiBufferSource renderer, int light, int overlayLight, float partialTicks, boolean hasEffect, LivingEntity entity, ItemStack stack) {
+        renderMask(baseModel, matrix, renderer, light, overlayLight, hasEffect);
         if (!baseModel.head.visible){
             return;
         }
-        renderMask(baseModel, matrix, renderer, light, overlayLight, hasEffect);
+        if (baseModel.young){
+            matrix.pushPose();
+            renderMask(baseModel, matrix, renderer, light, overlayLight, hasEffect);
+            matrix.popPose();
+        }
+
 
     }
 
@@ -38,8 +48,5 @@ public class KitsuneMaskArmor implements ICustomArmor, ResourceManagerReloadList
         matrix.popPose();
     }
 
-    @Override
-    public void onResourceManagerReload(ResourceManager resourceManager) {
-        model = new KitsuneMaskModel(Minecraft.getInstance().getEntityModels());
-    }
+
 }

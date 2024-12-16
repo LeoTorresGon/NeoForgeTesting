@@ -40,7 +40,7 @@ public class ModEventBusEvents {
 
     @SubscribeEvent
     private static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event){
-        event.registerLayerDefinition(KitsuneMaskModel.MASK_LOCATION, KitsuneMaskModel::createLayerDefinition);
+        event.registerLayerDefinition(KitsuneMaskModel.MASK_LAYER, KitsuneMaskModel::createLayerDefinition);
     }
 
     @SubscribeEvent
