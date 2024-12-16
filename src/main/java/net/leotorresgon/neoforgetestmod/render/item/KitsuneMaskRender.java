@@ -13,11 +13,11 @@ import org.jetbrains.annotations.NotNull;
 public class KitsuneMaskRender extends ISTER {
 
     public static KitsuneMaskRender RENDERER = new KitsuneMaskRender();
-    private KitsuneMaskModel kitsuneMask;
+    private KitsuneMaskModel kitsuneMasks;
 
     @Override
     public void onResourceManagerReload(@NotNull ResourceManager resourceManager) {
-        kitsuneMask = new KitsuneMaskModel(getEntityModels());
+        kitsuneMasks = new KitsuneMaskModel(getEntityModels());
     }
 
     @Override
@@ -26,7 +26,7 @@ public class KitsuneMaskRender extends ISTER {
         matrix.pushPose();
         matrix.translate(0.5, 0.5, 0.5);
         matrix.mulPose(Axis.ZP.rotationDegrees(180));
-        kitsuneMask.render(matrix, renderer, light, overlayLight, stack.hasFoil());
+        kitsuneMasks.render(matrix, renderer, light, overlayLight, stack.hasFoil());
         matrix.popPose();
     }
 }
